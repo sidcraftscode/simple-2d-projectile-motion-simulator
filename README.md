@@ -1,6 +1,6 @@
 # Simple 2D Projectile Motion Simulator
 
-A small 2D projectile motion demo to visualise basic kinematics.
+A small 2D projectile motion demo to visualise basic kinematics. You can use it at https://simple-2d-projectile-motion-simulator.vercel.app.
 
 You can launch a particle using either speed + angle or by setting the velocity components directly, and see the trajectory update in real time.
 
