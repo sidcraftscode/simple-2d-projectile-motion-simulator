@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simple 2D Projectile Motion Simulator</title>
+</head>
+
+<body class="h-screen m-0 font-sans bg-gray-50 flex">
+
+  <!-- Left: Simulation Container -->
+  <div id="simulation" class="flex-1 h-screen overflow-auto relative bg-gray-100">
+    <!-- Ledge -->
+    <div id="ledge" class="absolute left-0 w-12 bg-gray-400" style="height: 0px; bottom: 0;"></div>
+
+    <!-- Particle -->
+    <div id="particle" class="absolute left-0 z-10 rounded-full h-12 w-12 bg-red-500"></div>
+
+    <!-- Path container -->
+    <div id="path"></div>
+
+    <!-- Toggle sidebar button -->
+    <button id="toggleSidebar"
+      class="fixed top-4 right-4 z-20 bg-white p-2 rounded-full shadow-lg hover:bg-gray-100 transition">
+      <svg id="toggleIcon" class="w-6 h-6 text-gray-600 transition-transform duration-300" fill="none"
+        stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+      </svg>
+    </button>
+  </div>
+
+  <!-- Right: Controls Panel -->
+  <div id="sidebar"
+    class="w-72 h-screen bg-white p-4 shadow-lg flex flex-col gap-4 overflow-auto border-l border-gray-200 transition-all duration-300">
+    <h2 class="text-xl font-bold text-gray-800">Controls</h2>
+    <button id="toggleComponents"
+      class="text-blue-600 hover:text-blue-800 text-left text-xs mt-1 hover:underline">Switch to components</button>
+    <div class="flex flex-col gap-4">
+      <div class="flex flex-col text-xs">
+        <label id="speedLabel">Speed (m/s)</label>
+        <input id="speedRange" class="appearance-none bg-gray-300 rounded-full my-2" type="range" min="0" max="50"
+          value="20">
+        <input id="speed" type="number" value="20" class="border rounded-lg px-2 border-gray-300 mt-1">
+      </div>
+
+      <div class="flex flex-col text-xs">
+        <label id="angleLabel">Angle (°)</label>
+        <input id="angleRange" class="appearance-none bg-gray-300 rounded-full my-2" type="range" min="0" max="90"
+          value="45">
+        <input id="angle" type="number" value="45" class="border rounded-lg px-2 border-gray-300 mt-1">
+      </div>
+
+      <div class="flex flex-col text-xs">
+        <label>Initial Height (m)</label>
+        <input id="heightRange" class="appearance-none bg-gray-300 rounded-full my-2" type="range" min="0" max="30"
+          value="0">
+        <input id="height" type="number" value="0"
+          class="border rounded-lg px-2 border-gray-300 mt-1 focus:ring-gray-300 focus:ring-2 focus:border-gray-400">
+      </div>
+
+      <div class="flex gap-2">
+        <button id="launch"
+          class="flex-1 px-4 py-2 text-sm bg-blue-600 text-white rounded hover:bg-blue-700 active:scale-95 transition">
+          Launch
+        </button>
+        <button id="reset"
+          class="flex-1 px-4 py-2 text-sm bg-gray-600 text-white rounded hover:bg-gray-700 active:scale-95 transition">
+          Reset
+        </button>
+      </div>
+    </div>
+
+    <!-- Math output -->
+    <div id="results" class="text-xs text-gray-700 mt-2 space-y-1"></div>
+  </div>
+
+  <script type="module" src="/index.js"></script>
+</body>
+
+</html>

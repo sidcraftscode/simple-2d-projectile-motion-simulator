@@ -1,0 +1,18 @@
+{
+  "name": "simple-2d-projectile-motion-simulator",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build --minify",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "@tailwindcss/forms": "^0.5.11",
+    "@tailwindcss/vite": "^4.1.0",
+    "tailwindcss": "^4.1.0",
+    "vite": "^6.0.0",
+    "vite-plugin-minify": "^2.1.0"
+  }
+}
